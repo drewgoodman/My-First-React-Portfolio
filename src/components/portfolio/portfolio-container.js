@@ -33,7 +33,6 @@ export default class PortfolioContainer extends Component {
             .get('https://drewgoodman.devcamp.space/portfolio/portfolio_items')
             .then(response => {
                 // handle success
-                console.log("Response Data ", response);
                 this.setState({
                     data: response.data.portfolio_items
                 })
