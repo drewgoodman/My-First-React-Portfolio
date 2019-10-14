@@ -5,7 +5,6 @@ export default class PortfolioItem extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             portfolioItemClass: ""
         };

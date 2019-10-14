@@ -19,6 +19,9 @@ import PortfolioManager from "./pages/portfolio-manager";
 import Auth from "./pages/auth";
 import NoMatch from "./pages/no-match";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -77,6 +80,9 @@ export default class App extends Component {
 
   componentDidMount() {
     this.checkLoginStatus();
+    AOS.init({
+      duration: 1000
+    });
   }
 
   authorizedPages() {

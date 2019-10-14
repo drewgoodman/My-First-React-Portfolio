@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import PortfolioForm from "../portfolio/portfolio-form";
 import PortfolioSidebarList from "../portfolio/portfolio-sidebar-list";
@@ -11,7 +12,8 @@ export default class PortfolioManager extends Component {
 
         this.state = {
             portfolioItems: [],
-            portfolioToEdit: {}
+            portfolioToEdit: {},
+            isLoading: true
         };
 
         this.handleNewFormSubmission = this.handleNewFormSubmission.bind(this);
@@ -69,7 +71,8 @@ export default class PortfolioManager extends Component {
             withCredentials: true
         }).then(response => {
             this.setState({
-                portfolioItems: [...response.data.portfolio_items]
+                portfolioItems: [...response.data.portfolio_items],
+                isLoading: false
             })
         }).catch(error => {
             console.log("error in getPortfolioItems", error)
@@ -98,6 +101,11 @@ export default class PortfolioManager extends Component {
                         handleDeleteClick={this.handleDeleteClick}
                         handleEditClick={this.handleEditClick}
                     />
+                    {this.state.isLoading ? (
+                        <div className="content-loader">
+                            <FontAwesomeIcon icon="spinner" spin />
+                        </div>
+                    ) : null}
                 </div>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AOS from 'aos';
 
 
 import PortfolioItem from './portfolio-item';
@@ -8,7 +9,7 @@ export default class PortfolioContainer extends Component {
 
     constructor() {
         super();
-
+        AOS.init();
         this.state = { // Initial state
             isLoading: false,
             pageTitle: "Welcome to my portfolio",
