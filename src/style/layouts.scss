@@ -1,7 +1,7 @@
 .content-page-wrapper {
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     height: calc(100vh - 79px);
 
     .right-column {
@@ -33,6 +33,15 @@
             }
         }
     }
+
+    .left-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+    }
+
+
 
 
     // .contact-spacer {
