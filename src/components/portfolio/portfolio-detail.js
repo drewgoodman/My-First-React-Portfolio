@@ -50,6 +50,8 @@ export default class extends Component {
             width: "200px"
         }
 
+        const newUrl = `https://${url}`;
+
         return (
             <div className="portfolio-detail-wrapper">
                 <div className="banner" style={bannerStyles}>
@@ -60,7 +62,7 @@ export default class extends Component {
                 </div>
 
                 <div className="bottom-content-wrapper">
-                    <a href={url} className="site-link" target="_blank">
+                    <a href={newUrl} className="site-link" target="_blank">
                         Visit {name}
                     </a>
                 </div>
